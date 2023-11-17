@@ -24,7 +24,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
 
 const { isDraft, title, description, date, tags, image } = entry.data;
 ---
@@ -41,5 +41,6 @@ const { isDraft, title, description, date, tags, image } = entry.data;
     }</time
   >
   <span>{tags}</span>
+  <p>{remarkPluginFrontmatter.minutesRead}</p>
   <Content />
 </BlogLayout>

@@ -2,9 +2,11 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
+const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <h1>{frontmatter.title}</h1>
+  <p>{minutesRead}</p>
   <slot />
 </BaseLayout>
