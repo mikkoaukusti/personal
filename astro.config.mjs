@@ -4,6 +4,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    contentCollectionCache: true, // bypass the cache by passing `astro build --force`
+  },
   prefetch: true,
   integrations: [
     tailwind({
