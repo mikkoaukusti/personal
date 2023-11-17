@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+
+const { isDraft, title, description, date, tags, image } = post.data;
+---
+
+<article>
+  <span>{title}</span>
+  <span>{description}</span>
+  <time datetime={date.toISOString()}
+    >{
+      date.toLocaleDateString(undefined, {
+        dateStyle: "medium",
+        timeZone: "UTC",
+      })
+    }</time
+  >
+  <span>{tags}</span>
+  <a href={`/blog/${post.slug}`}>Read Post</a>
+</article>

@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+
+import "@/styles/base.css";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogPost from "@/components/BlogPost.astro";
+
+// Get all entries from the "blog" collection and filter out drafts for production
+const posts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.isDraft !== true : true;
+});
+---
+
+<BaseLayout title="Blog" description="Blog description">
+  <h1>Blog</h1>
+  {posts.map((post) => <BlogPost post={post} />)}
+</BaseLayout>

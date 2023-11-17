@@ -1,0 +1,45 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import "@/styles/base.css";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  // Get all entries from the "blog" collection and filter out drafts for production
+  const posts = await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  });
+
+  // Map the filtered posts to generate static paths
+  const paths = posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+
+  return paths;
+}
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const { isDraft, title, description, date, tags, image } = entry.data;
+---
+
+<BlogLayout frontmatter={entry.data}>
+  <h1>{title}</h1>
+  <h1>{description}</h1>
+  <time datetime={date.toISOString()}
+    >{
+      date.toLocaleDateString(undefined, {
+        dateStyle: "medium",
+        timeZone: "UTC",
+      })
+    }</time
+  >
+  <span>{tags}</span>
+  <Content />
+</BlogLayout>
