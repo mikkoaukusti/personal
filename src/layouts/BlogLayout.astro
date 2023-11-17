@@ -6,7 +6,6 @@ const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <h1>{frontmatter.title}</h1>
   <p>{minutesRead}</p>
   <slot />
 </BaseLayout>

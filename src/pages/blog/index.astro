@@ -12,6 +12,8 @@ const posts = await getCollection("blog", ({ data }) => {
 ---
 
 <BaseLayout title="Blog" description="Blog description">
-  <h1>Blog</h1>
-  {posts.map((post) => <BlogPost post={post} />)}
+  <h1 class="text-4xl text-white font-bold">Blog</h1>
+  <div class="grid grid-cols-1 gap-10 pt-10">
+    {posts.map((post) => <BlogPost post={post} />)}
+  </div>
 </BaseLayout>

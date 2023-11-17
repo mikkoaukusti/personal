@@ -1,9 +1,9 @@
 ---
 isDraft: false
-title: Hello my friends!
-description: This is a description
-date: 2022-04-20
-tags: [HL7, InterSystems, REST API, XML, SQL]
+title: Healthcare Integration
+description: How we built an integration between patients and hospitals?
+date: 2023-12-20
+tags: [HL7, REST API, XML]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus a pellentesque sit amet porttitor eget dolor. Nec tincidunt praesent semper feugiat nibh sed. In nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Pellentesque id nibh tortor id aliquet lectus proin nibh. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Amet aliquam id diam maecenas ultricies mi eget mauris. Nulla facilisi cras fermentum odio eu feugiat. Maecenas sed enim ut sem viverra. Vitae suscipit tellus mauris a diam maecenas sed.

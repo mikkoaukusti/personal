@@ -1,9 +1,9 @@
 ---
 isDraft: false
-title: Test
-description: Test description
+title: My dev experience
+description: An overview of web app development
 date: 2023-11-16
-tags: [React, JavaScript, Astro]
+tags: [React, TypeScript]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus a pellentesque sit amet porttitor eget dolor. Nec tincidunt praesent semper feugiat nibh sed. In nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Pellentesque id nibh tortor id aliquet lectus proin nibh. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Amet aliquam id diam maecenas ultricies mi eget mauris. Nulla facilisi cras fermentum odio eu feugiat. Maecenas sed enim ut sem viverra. Vitae suscipit tellus mauris a diam maecenas sed.

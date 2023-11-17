@@ -7,20 +7,27 @@ interface Props {
 
 const { post } = Astro.props;
 
-const { isDraft, title, description, date, tags, image } = post.data;
+const { title, description, date, tags } = post.data;
 ---
 
 <article>
-  <span>{title}</span>
-  <span>{description}</span>
-  <time datetime={date.toISOString()}
-    >{
-      date.toLocaleDateString(undefined, {
-        dateStyle: "medium",
-        timeZone: "UTC",
-      })
-    }</time
-  >
-  <span>{tags}</span>
-  <a href={`/blog/${post.slug}`}>Read Post</a>
+  <p class="pb-1 text-2xl text-neutral-300 font-bold">{title}</p>
+  <p class="pb-3 text-lg text-neutral-400 tracking-tight">{description}</p>
+  <div class="pb-1 flex justify-between">
+    <time
+      class="text-sm text-neutral-400 tracking-tight"
+      datetime={date.toISOString()}
+      >{
+        date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })
+      }</time
+    >
+    <span class="text-sm text-neutral-400 tracking-tight">{tags}</span>
+  </div>
+  <div>
+    <a href={`/blog/${post.slug}`}>Read Post</a>
+  </div>
 </article>
