@@ -10,10 +10,18 @@ const { post } = Astro.props;
 const { title, description, date, tags } = post.data;
 ---
 
-<a href={`/blog/${post.slug}`}>
-  <p class="pb-1 text-2xl text-neutral-300 font-bold">{title}</p>
-  <p class="pb-3 text-lg text-neutral-400 tracking-tight">{description}</p>
-  <div class="pb-1 flex items-center justify-between">
+<a href={`/blog/${post.slug}`} class="group">
+  <p
+    class="pb-3 text-2xl text-neutral-300 font-bold group-hover:underline decoration-neutral-300"
+  >
+    {title}
+  </p>
+  <p
+    class="pb-3 text-lg text-neutral-400 tracking-tight group-hover:underline decoration-neutral-400"
+  >
+    {description}
+  </p>
+  <div class="pb-3 flex items-center justify-between">
     <time class="text-neutral-400 tracking-tight" datetime={date.toISOString()}
       >{
         date.toLocaleDateString("en-US", {
@@ -26,7 +34,7 @@ const { title, description, date, tags } = post.data;
     <div class="flex space-x-2">
       {
         tags.map((tag) => (
-          <p class="p-1 text-xs text-neutral-400 tracking-tight bg-white rounded">
+          <p class="p-1 text-xs text-neutral-400 bg-[#232323] rounded border border-[#4d4d4d] group-hover:bg-[#292929] group-hover:border-[#5d5d5d]">
             {tag}
           </p>
         ))

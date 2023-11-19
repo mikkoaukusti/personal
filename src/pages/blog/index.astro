@@ -1,14 +1,23 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 import "@/styles/base.css";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import BlogPost from "@/components/BlogPost.astro";
 
+// Sort posts by date in descending order (newest first)
+const sortPostsByDate = (
+  posts: CollectionEntry<"blog">[]
+): CollectionEntry<"blog">[] => {
+  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+};
+
 // Get all entries from the "blog" collection and filter out drafts for production
-const posts = await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.isDraft !== true : true;
-});
+const posts = sortPostsByDate(
+  await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  })
+);
 ---
 
 <BaseLayout title="Blog" description="Blog description">
