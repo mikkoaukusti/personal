@@ -22,7 +22,7 @@ const posts = sortPostsByDate(
 
 <BaseLayout title="Blog" description="Blog description">
   <h1 class="text-4xl text-white font-bold">Blog</h1>
-  <div class="grid grid-cols-1 gap-10 pt-10">
+  <div class="grid grid-cols-1 gap-10 py-10">
     {posts.map((post) => <BlogPost post={post} />)}
   </div>
 </BaseLayout>

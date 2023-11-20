@@ -3,6 +3,9 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 import "@/styles/base.css";
 import BlogLayout from "@/layouts/BlogLayout.astro";
+import BackArrow from "@/components/icons/BackArrow.astro";
+import Dot from "@/components/icons/Dot.astro";
+import Slash from "@/components/icons/Slash.astro";
 
 export async function getStaticPaths() {
   // Get all entries from the "blog" collection and filter out drafts for production
@@ -30,17 +33,45 @@ const { isDraft, title, description, date, tags, image } = entry.data;
 ---
 
 <BlogLayout frontmatter={entry.data}>
-  <h1>{title}</h1>
-  <h1>{description}</h1>
-  <time datetime={date.toISOString()}
-    >{
-      date.toLocaleDateString(undefined, {
-        dateStyle: "medium",
-        timeZone: "UTC",
-      })
-    }</time
+  <a
+    href="/blog"
+    class="pb-6 flex items-center gap-x-0.5 text-sm text-neutral-400 tracking-tight hover:underline sm:hidden"
+    ><BackArrow />Back to blog</a
   >
-  <span>{tags}</span>
-  <p>{remarkPluginFrontmatter.minutesRead}</p>
-  <Content />
+  <nav
+    class="hidden pb-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight italic sm:flex"
+  >
+    <a href="/" class="hover:underline">Home</a>
+    <Slash />
+    <a href="/blog" class="hover:underline">Blog</a>
+    <Slash />
+    <a
+      href={`/blog/${entry.slug}`}
+      class="text-neutral-300 underline decoration-neutral-300">{title}</a
+    >
+  </nav>
+  <h1 class="pb-3 text-2xl text-neutral-300 font-bold">{title}</h1>
+  <section
+    class="pb-3 flex items-center justify-between text-sm text-neutral-400 tracking-tight border-b border-[#4d4d4d]"
+  >
+    <div class="flex items-center gap-x-1">
+      <time datetime={date.toISOString()}
+        >{
+          date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }</time
+      >
+      <Dot />
+      {remarkPluginFrontmatter.minutesRead}
+    </div>
+    <a
+      href="/blog"
+      class="hidden items-center gap-x-0.5 hover:underline sm:flex"
+      ><BackArrow />Back to blog</a
+    >
+  </section>
+  <article class="py-6 prose text-neutral-400"><Content /></article>
 </BlogLayout>
