@@ -6,9 +6,36 @@ date: 2023-12-31
 tags: [Programming]
 ---
 
+**bold text**
+
+[title](https://www.example.com)
+
+- First item
+- Second item
+- Third item
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+1. Apples
+2. Bananas
+3. Oranges
+4. Pearls
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus a pellentesque sit amet porttitor eget dolor. Nec tincidunt praesent semper feugiat nibh sed. In nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Pellentesque id nibh tortor id aliquet lectus proin nibh. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Amet aliquam id diam maecenas ultricies mi eget mauris. Nulla facilisi cras fermentum odio eu feugiat. Maecenas sed enim ut sem viverra. Vitae suscipit tellus mauris a diam maecenas sed.
 
 Phasellus vestibulum lorem sed risus ultricies. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Felis eget nunc lobortis mattis aliquam faucibus purus. Eget nunc lobortis mattis aliquam faucibus. Amet nisl purus in mollis nunc sed. Faucibus purus in massa tempor. Congue quisque egestas diam in arcu cursus euismod quis viverra. Eget mi proin sed libero enim sed faucibus turpis. Sapien nec sagittis aliquam malesuada bibendum arcu. Blandit massa enim nec dui nunc mattis enim. Amet luctus venenatis lectus magna fringilla. Purus gravida quis blandit turpis cursus in hac habitasse. Sem integer vitae justo eget magna fermentum. Ac auctor augue mauris augue. Eu consequat ac felis donec et odio pellentesque diam volutpat. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Eget aliquet nibh praesent tristique magna sit amet purus. Aenean pharetra magna ac placerat vestibulum lectus. Commodo quis imperdiet massa tincidunt. Amet commodo nulla facilisi nullam vehicula ipsum.
+
+```tsx
+async function Views({ slug }: { slug: string }) {
+  let views = await getViewsCount();
+  incrementViews(slug);
+  // ...
+}
+```
 
 Orci ac auctor augue mauris augue. Mauris ultrices eros in cursus turpis massa tincidunt dui. Facilisis gravida neque convallis a cras semper auctor. Quis vel eros donec ac odio. Nullam ac tortor vitae purus faucibus ornare suspendisse sed. Pellentesque eu tincidunt tortor aliquam nulla. Ipsum a arcu cursus vitae congue. Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Hac habitasse platea dictumst vestibulum rhoncus est. Nullam non nisi est sit amet facilisis. Amet mauris commodo quis imperdiet massa tincidunt. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Varius quam quisque id diam vel quam elementum pulvinar etiam. Volutpat est velit egestas dui id ornare arcu odio. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Egestas sed tempus urna et pharetra. Gravida rutrum quisque non tellus orci ac auctor augue. Auctor neque vitae tempus quam.
 
