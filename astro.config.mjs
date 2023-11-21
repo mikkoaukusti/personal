@@ -8,6 +8,7 @@ export default defineConfig({
   experimental: {
     contentCollectionCache: true, // bypass the cache by passing `astro build --force`
   },
+  site: "http://www.localhost:4321",
   prefetch: true,
   markdown: {
     remarkPlugins: [remarkReadingTime],
