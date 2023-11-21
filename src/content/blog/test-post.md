@@ -3,7 +3,6 @@ isDraft: false
 title: My dev experience
 description: An overview of web app development
 date: 2023-11-16
-tags: [React, TypeScript]
 ---
 
 # This is a title

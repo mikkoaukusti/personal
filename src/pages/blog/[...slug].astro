@@ -29,7 +29,7 @@ interface Props {
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
 
-const { isDraft, title, description, date, tags, image } = entry.data;
+const { isDraft, title, description, date } = entry.data;
 ---
 
 <BlogLayout frontmatter={entry.data}>

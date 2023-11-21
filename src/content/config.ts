@@ -12,7 +12,6 @@ export const collections = {
         .string()
         .min(1, { message: "Description must be at least 1 character long" }),
       date: z.date(),
-      tags: z.array(z.string()),
       image: z
         .object({
           src: z

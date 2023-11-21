@@ -7,7 +7,7 @@ interface Props {
 
 const { post } = Astro.props;
 
-const { title, description, date, tags } = post.data;
+const { title, description, date } = post.data;
 ---
 
 <a href={`/blog/${post.slug}`} class="group">
@@ -21,7 +21,7 @@ const { title, description, date, tags } = post.data;
   >
     {description}
   </p>
-  <div class="pb-3 flex items-center justify-between">
+  <div class="pb-3">
     <time class="text-neutral-400 tracking-tight" datetime={date.toISOString()}
       >{
         date.toLocaleDateString("en-US", {
@@ -31,14 +31,5 @@ const { title, description, date, tags } = post.data;
         })
       }</time
     >
-    <div class="flex space-x-2">
-      {
-        tags.map((tag) => (
-          <p class="p-1 text-xs text-neutral-400 bg-[#232323] rounded border border-[#4d4d4d] group-hover:bg-[#292929] group-hover:border-[#5d5d5d]">
-            {tag}
-          </p>
-        ))
-      }
-    </div>
   </div>
 </a>

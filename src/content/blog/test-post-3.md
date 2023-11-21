@@ -3,7 +3,6 @@ isDraft: false
 title: Testing
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 date: 2023-12-31
-tags: [Programming]
 ---
 
 **bold text**
