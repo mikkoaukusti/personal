@@ -1,0 +1,17 @@
+---
+import Dot from "@/components/icons/Dot.astro";
+import Logo from "@/components/icons/Logo.astro";
+---
+
+<header class="py-6">
+  <nav
+    class="flex items-center justify-between text-neutral-400 tracking-tight"
+  >
+    <a href="/" class="hover:text-[#B4A2F7]"><Logo /></a>
+    <div class="flex items-center gap-x-1 text-sm">
+      <a href="/" class="hover:underline">Home</a>
+      <Dot />
+      <a href="/blog" class="hover:underline">Blog</a>
+    </div>
+  </nav>
+</header>

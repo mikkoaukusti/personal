@@ -20,9 +20,12 @@ const posts = sortPostsByDate(
 );
 ---
 
-<BaseLayout title="Blog" description="Blog description">
-  <h1 class="text-4xl text-white font-bold">Blog</h1>
-  <div class="grid grid-cols-1 gap-10 py-10">
+<BaseLayout
+  title="Blog | Mikko Jokipuu"
+  description="Place where I write articles about my life."
+>
+  <h1 class="py-6 text-4xl text-white font-bold">Blog</h1>
+  <section class="grid grid-cols-1 gap-6 py-3">
     {posts.map((post) => <BlogPost post={post} />)}
-  </div>
+  </section>
 </BaseLayout>

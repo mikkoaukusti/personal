@@ -32,17 +32,15 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
 const { title, date, description } = entry.data;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title + " | Mikko Jokipuu"} description={description}>
   <a
     href="/blog"
-    class="pb-6 flex items-center gap-x-0.5 text-sm text-neutral-400 tracking-tight hover:underline sm:hidden"
+    class="py-6 flex items-center gap-x-0.5 text-sm text-neutral-400 tracking-tight hover:underline sm:hidden"
     ><BackArrow />Back to blog</a
   >
   <nav
-    class="hidden pb-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight sm:flex"
+    class="hidden py-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight sm:flex"
   >
-    <a href="/" class="hover:underline">Home</a>
-    <Slash />
     <a href="/blog" class="hover:underline">Blog</a>
     <Slash />
     <a

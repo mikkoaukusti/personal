@@ -2,6 +2,7 @@
 import { ViewTransitions, fade } from "astro:transitions";
 
 import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
 
 interface Props {
   title: string;
@@ -53,7 +54,8 @@ const { title, description, image } = Astro.props;
       crossorigin="anonymous"
     />
   </head>
-  <body class="font-sans container pt-4 bg-[#1C1C1C] lg:max-w-2xl">
+  <body class="font-sans container bg-[#1C1C1C] lg:max-w-2xl">
+    <Navbar />
     <slot />
     <Footer />
   </body>
