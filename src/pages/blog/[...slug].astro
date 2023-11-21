@@ -2,10 +2,10 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 import "@/styles/base.css";
-import BlogLayout from "@/layouts/BlogLayout.astro";
 import BackArrow from "@/components/icons/BackArrow.astro";
 import Dot from "@/components/icons/Dot.astro";
 import Slash from "@/components/icons/Slash.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   // Get all entries from the "blog" collection and filter out drafts for production
@@ -29,17 +29,17 @@ interface Props {
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
 
-const { isDraft, title, description, date } = entry.data;
+const { title, date, description } = entry.data;
 ---
 
-<BlogLayout frontmatter={entry.data}>
+<BaseLayout title={title} description={description}>
   <a
     href="/blog"
     class="pb-6 flex items-center gap-x-0.5 text-sm text-neutral-400 tracking-tight hover:underline sm:hidden"
     ><BackArrow />Back to blog</a
   >
   <nav
-    class="hidden pb-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight italic sm:flex"
+    class="hidden pb-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight sm:flex"
   >
     <a href="/" class="hover:underline">Home</a>
     <Slash />
@@ -78,4 +78,4 @@ const { isDraft, title, description, date } = entry.data;
   >
     <Content />
   </article>
-</BlogLayout>
+</BaseLayout>
