@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "C:/Users/mikko/OneDrive/Tiedostot/GitHub/personal",
     "paths": {
       "@/components/*": ["src/components/*"],
       "@/content/*": ["src/content/*"],
@@ -9,6 +9,8 @@
       "@/pages/*": ["src/pages/*"],
       "@/styles/*": ["src/styles/*"]
     },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "verbatimModuleSyntax": true,
     "target": "ESNext",
     "module": "ESNext",

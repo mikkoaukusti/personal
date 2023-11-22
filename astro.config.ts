@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
 
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
@@ -8,6 +9,7 @@ export default defineConfig({
   experimental: {
     contentCollectionCache: true, // bypass the cache by passing `astro build --force`
   },
+
   site: "http://www.localhost:4321",
   prefetch: true,
   markdown: {
@@ -23,5 +25,6 @@ export default defineConfig({
       // Useful if you need to define and/or import your own custom `base.css`.
       applyBaseStyles: false,
     }),
+    react(),
   ],
 });
