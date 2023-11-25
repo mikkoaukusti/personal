@@ -1,8 +1,11 @@
 ---
 import "@/styles/base.css";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroText from "@/components/HeroText.astro";
 ---
 
-<BaseLayout title="Welcome to Astro" description="Hello">
-  <h1>Hello world!</h1>
+<BaseLayout title="Home | Mikko Jokipuu" description="Hello">
+  <main class="py-6">
+    <HeroText />
+  </main>
 </BaseLayout>
