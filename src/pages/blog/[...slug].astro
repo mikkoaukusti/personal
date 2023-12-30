@@ -35,22 +35,23 @@ const { title, date, description } = entry.data;
 <BaseLayout title={title + " | Mikko Jokipuu"} description={description}>
   <a
     href="/blog"
-    class="py-6 flex items-center gap-x-0.5 text-sm text-neutral-400 tracking-tight hover:underline sm:hidden"
+    class="py-6 flex items-center gap-x-0.5 text-sm text-neutral-800 hover:underline hover:decoration-2 sm:hidden"
     ><BackArrow />Back to blog</a
   >
   <nav
-    class="hidden py-6 items-center gap-x-1 text-sm text-neutral-400 tracking-tight sm:flex"
+    class="hidden pt-12 pb-6 items-center gap-x-1 text-sm text-neutral-800 sm:flex"
   >
-    <a href="/blog" class="hover:underline">Blog</a>
+    <a href="/blog" class="hover:underline hover:decoration-2">Blog</a>
     <Slash />
     <a
       href={`/blog/${entry.slug}`}
-      class="text-neutral-300 underline decoration-neutral-300">{title}</a
+      class="text-neutral-800 underline decoration-2 decoration-neutral-800"
+      >{title}</a
     >
   </nav>
-  <h1 class="pb-3 text-2xl text-neutral-300 font-bold">{title}</h1>
+  <h1 class="pb-3 text-lg text-neutral-800 font-medium">{title}</h1>
   <section
-    class="pb-3 flex items-center justify-between text-sm text-neutral-400 tracking-tight border-b border-[#4d4d4d]"
+    class="pb-3 flex items-center justify-between text-sm text-neutral-800 border-b border-neutral-800"
   >
     <div class="flex items-center gap-x-1">
       <time datetime={date.toISOString()}
@@ -67,12 +68,12 @@ const { title, date, description } = entry.data;
     </div>
     <a
       href="/blog"
-      class="hidden items-center gap-x-0.5 hover:underline sm:flex"
+      class="hidden items-center gap-x-0.5 hover:underline hover:decoration-2 sm:flex"
       ><BackArrow />Back to blog</a
     >
   </section>
   <article
-    class="py-6 text-neutral-400 prose prose-neutral prose-invert prose-headings:text-neutral-300"
+    class="py-6 text-neutral-800 prose prose-neutral prose-invert prose-headings:text-neutral-800"
   >
     <Content />
   </article>

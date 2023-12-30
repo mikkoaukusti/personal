@@ -1,13 +1,35 @@
 ---
+import { getCollection, type CollectionEntry } from "astro:content";
+
 import "@/styles/base.css";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import About from "@/components/About.astro";
-import HeroText from "@/components/HeroText.astro";
+import RecentPost from "@/components/RecentPost.astro";
+
+// Sort posts by date in descending order (newest first)
+const sortPostsByDate = (
+  posts: CollectionEntry<"blog">[]
+): CollectionEntry<"blog">[] => {
+  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+};
+
+// Get all entries from the "blog" collection and filter out drafts for production
+const posts = sortPostsByDate(
+  await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  })
+);
 ---
 
-<BaseLayout title="Home | Mikko Jokipuu" description="Hello">
-  <main class="py-6">
-    <HeroText />
+<BaseLayout
+  title="Home | Mikko Jokipuu"
+  description="Welcome to portfolio website of Mikko Jokipuu!"
+>
+  <main class="py-6 md:py-12">
     <About />
+    <section class="grid grid-cols-1 gap-y-4">
+      <h2 class="text-neutral-800 font-medium pt-6 md:pt-12">Recent posts</h2>
+      {posts.slice(0, 3).map((post) => <RecentPost post={post} />)}
+    </section>
   </main>
 </BaseLayout>

@@ -1,14 +1,22 @@
 ---
-
+import GitHub from "./icons/GitHub.astro";
 ---
 
-<header class="py-6">
-  <nav
-    class="flex items-center justify-between text-sm text-neutral-400 tracking-tight"
-  >
-    <a href="/" class="uppercase font-bold">mj</a>
-    <div class="flex items-center gap-x-1">
-      <a href="/blog" class="hover:underline">Blog</a>
+<header class="py-4 md:py-8">
+  <nav class="flex items-center justify-between text-sm text-neutral-800">
+    <div class="flex items-center gap-x-6">
+      <a href="/" class="font-bold">MJ</a>
+      <a href="/blog">Blog</a>
+      <a href="/work">Work</a>
     </div>
+    <a
+      class="flex items-center gap-x-1"
+      href="https://github.com/mikkoaukusti/personal"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <GitHub class="cursor-pointer h-4 w-4" aria-hidden="true" />
+       Source
+    </a>
   </nav>
 </header>
