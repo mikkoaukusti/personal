@@ -1,0 +1,26 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import AllPostsLink from "@/components/AllPostsLink.astro";
+import RecentPost from "@/components/RecentPost.astro";
+
+// Sort posts by date in descending order (newest first)
+const sortPostsByDate = (
+  posts: CollectionEntry<"blog">[]
+): CollectionEntry<"blog">[] => {
+  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+};
+
+// Get all entries from the "blog" collection and filter out drafts for production
+const posts = sortPostsByDate(
+  await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  })
+);
+---
+
+<section class="flex flex-col gap-y-2 text-neutral-600 leading-relaxed">
+  <h2 class="pb-2 text-neutral-800 font-medium">Recent posts</h2>
+  {posts.slice(0, 2).map((post) => <RecentPost post={post} />)}
+  <AllPostsLink />
+</section>

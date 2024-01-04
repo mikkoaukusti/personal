@@ -45,7 +45,9 @@ const { title, description, image } = Astro.props;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
   </head>
-  <body class="font-sans container mx-auto bg-neutral-100 lg:max-w-2xl">
+  <body
+    class="py-8 font-sans container mx-auto bg-neutral-50 md:py-16 lg:max-w-2xl"
+  >
     <Navbar />
     <slot />
   </body>
