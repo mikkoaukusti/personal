@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+
+import smart_hl7 from "@/components/assets/smart_hl7.png";
+import rules from "@/components/assets/rules.png";
+import code from "@/components/assets/code.png";
+---
+
+<section class="flex flex-col gap-y-6 text-neutral-600 leading-relaxed">
+  <h2 class="text-neutral-800 font-medium">Healthcare System Integration</h2>
+  <span class="px-2">
+    I had the opportunity to dive into an exciting healthcare system integration
+    project in collaboration with InterSystems and ATR Soft. The project took me
+    through three distinct phases, each offering its own unique set of
+    challenges and opportunities.
+  </span>
+  <div class="px-2 flex flex-col">
+    <span class="font-medium">Overview</span>
+    <span>
+      The project targeted towards systems integrations in the health care
+      industry. The platform chosen was InterSystems <a
+        class="font-medium underline decoration-2 hover:decoration-neutral-800"
+        href="https://intersystems.com/intersystems-iris-for-health/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        IRIS for Health,</a
+      > which is a widely used integration platform. Designing integrations visually
+      and with the proprietary <a
+        class="font-medium underline decoration-2 hover:decoration-neutral-800"
+        href="https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GCOS_intro"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ObjectScript</a
+      > programming language is supported by the platform.​
+    </span>
+  </div>
+  <div class="px-2 flex flex-col">
+    <span class="font-medium">Phases</span>
+    <span>The project consisted of a course and two separate stages.</span>
+  </div>
+  <ul class="px-2">
+    <li>- Course: IRIS for Health, arranged by InterSystems</li>
+    <li>- Stage 1: Front-end development for an IRIS backend application</li>
+    <li>
+      - Stage 2: Learning development on the IRIS platform by creating an
+      integration
+    </li>
+  </ul>
+  <span class="px-2">
+    During the first stage, I immersed myself in implementing the front-end for
+    ATR Soft's underlying back-end. This stage provided an opportunity for
+    creativity to flourish as I skillfully crafted a user interface using <a
+      class="font-medium underline decoration-2 hover:decoration-neutral-800"
+      href="https://react.dev/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      React</a
+    >
+    and <a
+      class="font-medium underline decoration-2 hover:decoration-neutral-800"
+      href="https://tailwindcss.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TailwindCSS,</a
+    > seamlessly complementing the background system created by ATR Soft.
+  </span>
+  <div class="px-2 flex flex-col">
+    <span class="font-medium">Stage 2 and what I learnt</span>
+    <span>
+      The main scope involved working with the IRIS for Health management portal
+      and constructing an integration application using components such as BPL,
+      DTL, ObjectScript, and Router. I also did HL7 message transformations and
+      statistical data gathering​.
+    </span>
+  </div>
+  <span class="px-2"
+    >Here I am doing basic routing rules for the HL7 messages:
+  </span>
+  <Image
+    src={rules}
+    alt="Routing rules"
+    class="mx-2 border-2 border-[#ececec] rounded-md"
+    quality={100}
+  />
+  <span class="px-2"
+    >The statistical data was stored into the permanent storage in IRIS.
+    Gathered patient data had to be anonymous. Here is a picture from the
+    development phase, showcasing the utilization of test patient information in
+    the SmartHL7 Message Viewer desktop application:
+  </span>
+  <Image
+    src={smart_hl7}
+    alt="SmartHL7 Message Viewer"
+    class="mx-2 border-2 border-[#ececec] rounded-md"
+    quality={100}
+  />
+  <span class="px-2"
+    >I programmed a lot with ObjectScript. Here is just one of the pictures:
+  </span>
+  <Image
+    src={code}
+    alt="Coding with ObjectScript"
+    class="mx-2 border-2 border-[#ececec] rounded-md"
+    quality={100}
+  />
+  <span class="px-2">In addition to the above, I also learnt:</span>
+  <ul class="px-2">
+    <li>
+      - Working with Docker containers, HTTP business operations, REST API, and
+      XML​
+    </li>
+    <li>
+      - Creating interoperability productions, configuring, monitoring, and
+      managing them, and creating custom business host classes
+    </li>
+  </ul>
+  <div class="px-2 flex flex-col">
+    <span class="font-medium">Concluding thoughts</span>
+    <span>
+      Overall, this project not only expanded my technical expertise but also
+      provided an opportunity to showcase my abilities in creative and
+      innovative work. This is just one example of my journey.
+    </span>
+  </div>
+  <span class="px-2">
+    You can read more about the project on
+    <a
+      class="font-medium underline decoration-2 hover:decoration-neutral-800"
+      href="https://atrsoft.com/teknologiat/integraatio-osaamista-turun-it-opiskelijoille"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ATR Soft's blog.</a
+    >
+    It is written in Finnish.
+  </span>
+</section>
