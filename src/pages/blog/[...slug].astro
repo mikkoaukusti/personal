@@ -2,9 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 import "@/styles/base.css";
-import BackArrow from "@/components/icons/BackArrow.astro";
-import Dot from "@/components/icons/Dot.astro";
-import Slash from "@/components/icons/Slash.astro";
+
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -33,48 +31,35 @@ const { title, date, description } = entry.data;
 ---
 
 <BaseLayout title={title + " | Mikko Jokipuu"} description={description}>
-  <a
-    href="/blog"
-    class="py-6 flex items-center gap-x-0.5 text-sm text-neutral-800 hover:underline hover:decoration-2 sm:hidden"
-    ><BackArrow />Back to blog</a
-  >
-  <nav
-    class="hidden pt-12 pb-6 items-center gap-x-1 text-sm text-neutral-800 sm:flex"
-  >
-    <a href="/blog" class="hover:underline hover:decoration-2">Blog</a>
-    <Slash />
-    <a
-      href={`/blog/${entry.slug}`}
-      class="text-neutral-800 underline decoration-2 decoration-neutral-800"
-      >{title}</a
+  <main class="pt-20">
+    <section class="flex flex-col gap-y-6 text-neutral-600 leading-relaxed">
+      <a href="/blog" class="group">
+        <div
+          class="flex items-center gap-x-2 rounded-md p-2 text-neutral-600 group-hover:bg-[#ececec]"
+        >
+          <span>&#129028</span>
+          <span class="font-medium">All posts</span>
+        </div>
+      </a>
+      <h2 class="text-neutral-800 font-medium">{title}</h2>
+      <div class="px-2 flex items-center gap-x-2">
+        <time datetime={date.toISOString()}
+          >{
+            date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }</time
+        >
+        <span>&#9472</span>
+        {remarkPluginFrontmatter.minutesRead}
+      </div>
+    </section>
+    <article
+      class="px-2 pt-6 text-neutral-600 prose prose-neutral prose-invert prose-headings:text-neutral-800"
     >
-  </nav>
-  <h1 class="pb-3 text-lg text-neutral-800 font-medium">{title}</h1>
-  <section
-    class="pb-3 flex items-center justify-between text-sm text-neutral-800 border-b border-neutral-800"
-  >
-    <div class="flex items-center gap-x-1">
-      <time datetime={date.toISOString()}
-        >{
-          date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        }</time
-      >
-      <Dot />
-      {remarkPluginFrontmatter.minutesRead}
-    </div>
-    <a
-      href="/blog"
-      class="hidden items-center gap-x-0.5 hover:underline hover:decoration-2 sm:flex"
-      ><BackArrow />Back to blog</a
-    >
-  </section>
-  <article
-    class="py-6 text-neutral-800 prose prose-neutral prose-invert prose-headings:text-neutral-800"
-  >
-    <Content />
-  </article>
+      <Content />
+    </article>
+  </main>
 </BaseLayout>
