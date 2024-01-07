@@ -7,27 +7,14 @@ interface Props {
 
 const { post } = Astro.props;
 
-const { title, description, date } = post.data;
+const { title, description } = post.data;
 ---
 
-<a href={`/blog/${post.slug}`} class="group">
-  <p
-    class="pb-1 text-neutral-800 underline decoration-neutral-500 decoration-2 group-hover:decoration-neutral-800"
+<a href={`/blog/${post.slug}`} class="group leading-relaxed">
+  <div
+    class="px-2 flex flex-col rounded-md p-2 text-neutral-600 group-hover:bg-[#ececec]"
   >
-    {title}
-  </p>
-  <p class="pb-1 text-neutral-800">
-    {description}
-  </p>
-  <div class="pb-1">
-    <time class="text-neutral-800 text-sm" datetime={date.toISOString()}
-      >{
-        date.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        })
-      }</time
-    >
+    <span class="font-medium">{title}</span>
+    <span>{description}</span>
   </div>
 </a>
