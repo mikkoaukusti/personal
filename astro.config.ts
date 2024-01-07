@@ -15,7 +15,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
-      theme: "one-dark-pro",
+      theme: "min-light",
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
     },
