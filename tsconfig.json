@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "C:/Users/mikko/OneDrive/Tiedostot/GitHub/personal",
+    "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/components/*"],
       "@/content/*": ["src/content/*"],
