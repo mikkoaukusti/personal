@@ -7,7 +7,7 @@
     "start": "astro dev",
     "check": "astro check && npm-check-updates",
     "update:all": "npm-check-updates -u && npm install",
-    "build": "astro check && astro build --config astro.config.ts",
+    "build": "astro build --config astro.config.ts",
     "preview": "astro preview",
     "astro": "astro"
   },
