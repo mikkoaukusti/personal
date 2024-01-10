@@ -1,5 +1,5 @@
 ---
-isDraft: false
+isDraft: true
 title: Healthcare Integration
 description: How we built an integration between patients and hospitals?
 date: 2023-12-20

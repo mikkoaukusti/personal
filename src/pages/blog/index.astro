@@ -1,23 +1,10 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
-
 import "@/styles/base.css";
+
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import BlogPost from "@/components/BlogPost.astro";
 
-// Sort posts by date in descending order (newest first)
-const sortPostsByDate = (
-  posts: CollectionEntry<"blog">[]
-): CollectionEntry<"blog">[] => {
-  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-};
-
-// Get all entries from the "blog" collection and filter out drafts for production
-const posts = sortPostsByDate(
-  await getCollection("blog", ({ data }) => {
-    return import.meta.env.PROD ? data.isDraft !== true : true;
-  })
-);
+import { posts } from "@/lib/utils";
 ---
 
 <BaseLayout
@@ -27,7 +14,13 @@ const posts = sortPostsByDate(
   <main class="pt-20">
     <section class="grid grid-cols-1 gap-y-4">
       <h2 class="text-neutral-800 font-medium">All posts</h2>
-      {posts.map((post) => <BlogPost post={post} />)}
+      {
+        posts.length > 0 ? (
+          posts.map((post) => <BlogPost post={post} />)
+        ) : (
+          <span class="px-2 text-neutral-600">No posts yet.</span>
+        )
+      }
     </section>
   </main>
 </BaseLayout>
