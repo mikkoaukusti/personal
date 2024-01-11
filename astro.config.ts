@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
@@ -9,8 +10,7 @@ export default defineConfig({
   experimental: {
     contentCollectionCache: true, // bypass the cache by passing `astro build --force`
   },
-
-  site: "http://www.localhost:4321",
+  site: "https://jokipuu.dev",
   prefetch: true,
   markdown: {
     remarkPlugins: [remarkReadingTime],
@@ -26,5 +26,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     react(),
+    sitemap(),
   ],
 });
