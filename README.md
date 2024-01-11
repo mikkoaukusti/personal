@@ -6,7 +6,7 @@ The project is regularly updated, and new features are added.
 
 ## Tech stack
 
-- **Framework:** ![Astro](https://astro.build/)
-- **Styling:** ![Tailwind CSS](https://tailwindcss.com/)
-- **Deployment:** ![Netlify](https://netlify.com/)
-- **Content:** ![Content Collections and Markdown](https://docs.astro.build/en/guides/content-collections/)
+- **Framework:** [Astro](https://astro.build/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment:** [Netlify](https://netlify.com/)
+- **Content:** [Content Collections and Markdown](https://docs.astro.build/en/guides/content-collections/)
