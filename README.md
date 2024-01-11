@@ -10,3 +10,7 @@ The project is regularly updated, and new features are added.
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Deployment:** [Netlify](https://netlify.com/)
 - **Content:** [Content Collections and Markdown](https://docs.astro.build/en/guides/content-collections/)
+
+## License
+
+Licensed under the MIT License. Check the [LICENSE](https://github.com/mikkoaukusti/personal/blob/main/LICENSE.md) file for details.
