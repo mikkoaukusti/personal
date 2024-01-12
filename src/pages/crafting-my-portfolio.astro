@@ -1,0 +1,15 @@
+---
+import "@/styles/base.css";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Portfolio from "@/components/projects/Portfolio.astro";
+---
+
+<BaseLayout
+  title="Crafting my portfolio | Mikko Jokipuu"
+  description="Explore my personal website's creation, seamlessly integrating Astro and TypeScript for optimal performance and a delightful user experience."
+>
+  <main class="pt-20 flex flex-col gap-y-20">
+    <Portfolio />
+  </main>
+</BaseLayout>
