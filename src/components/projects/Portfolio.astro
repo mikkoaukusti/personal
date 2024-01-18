@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import code2 from "@/components/assets/code2.png";
 import code3 from "@/components/assets/code3.png";
+import code4 from "@/components/assets/code4.png";
 ---
 
 <section class="flex flex-col gap-y-6 text-neutral-600 leading-relaxed">
@@ -44,7 +45,7 @@ import code3 from "@/components/assets/code3.png";
       target="_blank"
       rel="noopener noreferrer"
     >
-      Tailwind CSS</a
+      TailwindCSS</a
     > for styling, and
     <a
       class="font-medium underline decoration-2 hover:decoration-neutral-800"
@@ -61,30 +62,40 @@ import code3 from "@/components/assets/code3.png";
     >
       Markdown and Content Collections.</a
     >
+    I decided to use daily builds, utilizing <a
+      class="font-medium underline decoration-2 hover:decoration-neutral-800"
+      href="https://github.com/features/actions"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub Actions</a
+    > and Netlify's Build Hooks.
   </span>
   <div class="px-2 flex flex-col">
-    <span class="font-medium">Scheduling posts</span>
+    <span class="font-medium">Implementing the blog</span>
     <span>
-      I decided to schedule my blog posts, utilizing <a
-        class="font-medium underline decoration-2 hover:decoration-neutral-800"
-        href="https://github.com/features/actions"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub Actions</a
-      > and Netlify's Build Hooks. Here I am filtering all the drafts for production:
+      I wanted all blog posts to follow the same schema and syntax, so I decided
+      to use TypeScript and Zod to make this happen. Here is a picture of the
+      config.ts file where the magic is happening:
     </span>
   </div>
+  <Image
+    src={code4}
+    alt="Screenshot of code"
+    class="mx-2 border-2 border-[#ececec] rounded-md"
+    quality={100}
+  />
+  <span class="px-2"
+    >Here is a utility function that filters all the drafts for production. The
+    function reads the value of the isDraft property for a post. If the value is
+    true, the post is visible only in the development environment.</span
+  >
   <Image
     src={code2}
     alt="Screenshot of code"
     class="mx-2 border-2 border-[#ececec] rounded-md"
     quality={100}
   />
-  <span class="px-2"
-    >For this to function properly, two crucial elements are required: having an
-    isDraft and a date.
-  </span>
   <Image
     src={code3}
     alt="Screenshot of code"
